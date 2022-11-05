@@ -1,0 +1,70 @@
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        .trapezoid{
+            border-bottom: 50px solid #555; border-left: 25px solid transparent; border-right: 25px solid transparent; height: 0;
+            width: 125px;
+        }
+        .circle{
+            height: 50px; width: 50px;
+            background-color:rgb(0, 0, 0);
+            border-radius: 50%; display: inline-block;
+        }
+        .rectangle{
+            height: 50px; width: 250px;
+            background-color: gold;
+        }
+        </style>
+        <script>
+        $(document).ready(function(){
+            $("#body_col").click(function(){
+        const randomColor = Math.floor(Math.random()*16777215).toString(16);
+        var color= "#" + randomColor;
+        $("#body").css("background-color",color);
+            });
+
+           
+            $("#tyre_size_increase").click(function(){
+                size = "75%" 
+                h = "75px" 
+                w = "75px"
+                $("#tyre1").css({"border-radius": size, "height": h, "width":
+                w, }) 
+                $("#tyre2").css({"border-radius": size, "height": h, "width":
+                w, });;
+            
+            });
+            $("#tyre_size_decrease").click(function(){
+                size = "50%" 
+                h = "50px" 
+                w = "50px"
+                $("#tyre1").css({"border-radius": size, "height": h, "width":
+                w, }) 
+                $("#tyre2").css({"border-radius": size, "height": h, "width":
+                w, });;
+            });
+            $("#rl1").click(function(){
+        location.reload(true);
+    });
+            });
+            </script>
+            </head>
+            <body><h1>Trapezoid CSS</h1>
+                <div class="trapezoid"></div>
+                <div class="rectangle" id="body"></div>
+                <div class="circle" id="tyre1"></div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="circle"id="tyre2"></div><br>
+                <button id="body_col">Body Colour</button>
+                <button id="tyre_size_increase">tyre size increase</button>
+                <button id="tyre_size_decrease">tyre size decrease</button>
+                <button class="btn btn-success m-5" id="rl1">Reset</button>
+            </body>
+            </html>
